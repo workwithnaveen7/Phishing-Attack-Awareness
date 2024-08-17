@@ -6,35 +6,103 @@
     <title>You Have Been Phished!</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
             background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
+            width: 100%;
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transform: translateY(-20px);
+            opacity: 0;
+            animation: slideInFade 1s forwards;
+        }
+        @keyframes slideInFade {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
         h1 {
             color: #e74c3c;
+            font-size: 2em;
+            margin-bottom: 15px;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
         p {
-            color: #333;
             line-height: 1.6;
+            font-size: 1em;
+            margin-bottom: 15px;
         }
         ul {
-            list-style-type: disc;
-            padding-left: 20px;
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+        ul li {
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 1em;
+            padding-left: 25px;
+            text-align: left;
+        }
+        ul li::before {
+            content: '\2022';
+            color: #e74c3c;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
         .tips {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h2 {
+            color: #2980b9;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        p:last-of-type {
             margin-top: 20px;
-            background-color: #ecf0f1;
-            padding: 10px;
-            border-radius: 4px;
+            font-size: 1.1em;
+            color: #27ae60;
+            font-weight: bold;
+            animation: fadeIn 2s 1s forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInDelayed {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -42,7 +110,7 @@
     <div class="container">
         <h1>You Have Been Phished!</h1>
         <p>Don't worry, this was just a simulation to help you learn about phishing attacks.</p>
-        <p>Here’s what just happened:</p>
+        <p>Here's what just happened:</p>
         <ul>
             <li>You received an email that appeared to be from a trusted source.</li>
             <li>You were asked to click on a link to verify your account.</li>
@@ -51,7 +119,7 @@
         <div class="tips">
             <h2>How to Avoid Phishing Attacks:</h2>
             <ul>
-                <li>Always check the sender’s email address for authenticity.</li>
+                <li>Always check the sender's email address for authenticity.</li>
                 <li>Look for signs of urgency or threats—these are common in phishing emails.</li>
                 <li>Never click on links in emails unless you are sure they are legitimate.</li>
                 <li>Hover over links to see the actual URL before clicking.</li>
