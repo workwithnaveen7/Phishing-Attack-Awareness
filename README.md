@@ -1,6 +1,6 @@
 # Phishing-Attack-Awareness
 
-Part of [Phishing Simulation Platform](https://workwithnaveen7/Phishing-Simulation-Platform/)
+Part of [Phishing Simulation Platform](https://github.com/workwithnaveen7/Phishing-Simulation-Platform)
 
 To view this page:
 
